@@ -79,4 +79,26 @@ console.log("This file last modified " + docMod); // generates message in javaSc
 </footer>
 
 </body>
+	<canvas width="300" height="225"></canvas>
+	<canvas id="a" width="300" height="225"></canvas>
+	var a_canvas = document.getElementById("a");
+
+	function draw_b() {
+  var b_canvas = document.getElementById("b");
+  var b_context = b_canvas.getContext("2d");
+  b_context.fillRect(50, 25, 150, 100);
+}
+
+	<canvas id="c" width="500" height="375"></canvas>
+	var c_canvas = document.getElementById("c");
+	var context = c_canvas.getContext("2d");
+	
+	for (var x = 0.5; x < 500; x += 10) {
+  context.moveTo(x, 0);
+  context.lineTo(x, 375);
+		context.font = "bold 12px sans-serif";
+context.fillText("x", 248, 43);
+context.fillText("y", 58, 165);
+}
+}
 </html>
