@@ -61,9 +61,10 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
  	
 	<canvas id="b" width="300" height="225" style="border: 1px solid black;"></canvas> <!--this makes the border-->
-	<a onClick="displayName()" class="w3-btn w3-grey w3-round"> Name </a> <!--pressing this will show name-->
-	<a onClick="displayImage()" class="w3-btn w3-grey w3-round"> Image </a> <!--pressing this will display image-->
-	<a onClick="erasePage()" class="w3-btn w3-grey w3-round"> Erase </a> <!--pressing this will erase the page-->
+	<a onClick="displayRectangle()" class="w3-btn w3-grey w3-round"> Name </a> <!--pressing this will added rectangle in canvas-->
+	<a onClick="displayName()" class="w3-btn w3-grey w3-round"> Name </a> <!--pressing this will show name in canvas-->
+	<a onClick="displayImage()" class="w3-btn w3-grey w3-round"> Image </a> <!--pressing this will display image in canvas-->
+	<a onClick="eraseCanvas()" class="w3-btn w3-grey w3-round"> Erase </a> <!--pressing this will erase the canvas-->
 	
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
@@ -81,6 +82,10 @@ console.log("This file last modified " + docMod); // generates message in javaSc
 var b_canvas = document.getElementById("b");//finds element in HTML
 var b_context = b_canvas.getContext("2d");//gets context to manipulate
 
+function displayRectangle(){
+	b_context.font = (flower, 0, 0, 200, 125)//placed and scaled rectangle in canvas
+}
+
 function displayName(){
 	b_context.font = "bold 12px sans-serif";//size and font
 	b_context.fillText("Alyiah", 248, 43);//formats name
@@ -93,8 +98,8 @@ function displayImage(){	//shows flower image
 	
 }
 
-function erasePage(){//erases text
-	b_context.canvas.width = b_canvas.width;
+function eraseCanvas(){//erases canvas
+	b_context.canvas.width = b_canvas.width;//erase canvas content
 }
 </script>
 	
